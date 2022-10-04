@@ -1,22 +1,22 @@
-name: learn-github-actions #Optionnel  donner un nom pour s'y retrouver
-run-name: ${{ github.actor }} is learning GitHub Actions 
-on: [push] # "Quand l'action PUSH est effectuée : lancer les jobs suivants"
-jobs:
+# name: learn-github-actions #Optionnel  donner un nom pour s'y retrouver
+# run-name: ${{ github.actor }} is learning GitHub Actions 
+# on: [push] # "Quand l'action PUSH est effectuée : lancer les jobs suivants"
+# jobs:
 
-  check-bats-version: # Job qui s'appelle check-bats-version
-    runs-on: ubuntu-latest # Qui run sur la dernière version d'Ubuntu
-    steps: 
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      # This step checks out a copy of your repository.
-      - uses: actions/checkout@v3
-      # This step references the directory that contains the action.
-      - uses: ./.github/actions/hello-world-action
+#   check-bats-version: # Job qui s'appelle check-bats-version
+#     runs-on: ubuntu-latest # Qui run sur la dernière version d'Ubuntu
+#     steps: 
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: '14'
+#       - run: npm install -g bats
+#       - run: bats -v
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # This step checks out a copy of your repository.
+#       - uses: actions/checkout@v3
+#       # This step references the directory that contains the action.
+#       - uses: ./.github/actions/hello-world-action
 
